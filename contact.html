@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Fortescue Lake Cottage Association</h1>
+      <nav>
+        <ul>
+           <li><a href="index.html">Home</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="events.html">Events</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <h2>Get in Touch</h2>
+      <p>Have questions about the lake or upcoming events? Reach out with the contact form below:</p>
+    </section>
+
+    <section>
+      <article class="events">
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong> <a href="mailto:jim@fairhart.com"></a></p>
+      </article>
+
+      <article class="events">
+        <h3>Send Us a Message</h3>
+        <form action="mailto:bceagan@gmail.com"
+              method="post"
+              enctype="text/plain">
+          <label for="name">Name</label><br>
+          <input id="name" name="name" required><br>
+
+          <label for="email">Email</label><br>
+          <input type="email" id="email" name="email" required><br>
+
+          <label for="message">Message</label><br>
+          <textarea id="message" name="message" rows="5" required></textarea><br>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Fortescue Lake Cottage Association — established&nbsp;1976. Working together to
+         preserve and enjoy our lake for future generations.</p>
+    </div>
+  </footer>
+</body>
+</html>
