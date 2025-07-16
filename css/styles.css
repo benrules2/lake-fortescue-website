@@ -187,20 +187,36 @@ footer p {
   gap: 2rem;
   align-items: start;
 }
+
 .hero-grid h2 {
   grid-area: heading;
   margin: 0;
 }
+.hero-text h2 {
+  margin-bottom: 1.5rem;  /* adjust this value as needed */
+}
+
 .hero-text {
   grid-area: text;
 }
 
-.hero-image {
+.hero-image-single {
   grid-area: image;
-  max-width: 60%;           /* shrink to 60% of its parent */
-  margin: 1rem auto;        /* auto‑center */
+  max-width: 80%;        /* or whatever size you prefer */
+  margin: 1rem 0;         /* only top/bottom spacing */
+  justify-self: center;      /* push to the right edge */
   overflow: hidden;
   box-shadow: none;
+}
+
+.hero-image {
+  grid-area: image;
+  max-width: 80%;        /* or whatever size you prefer */
+  margin: 1rem 0;         /* only top/bottom spacing */
+  justify-self: center;      /* push to the right edge */
+  overflow: hidden;
+  box-shadow: none;
+  float: right
 }
 
 .hero-image img {
