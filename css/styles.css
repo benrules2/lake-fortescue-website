@@ -6,16 +6,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 
 /* 2. CSS Reset & Base */
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   font-family: 'Nunito', sans-serif;
   line-height: 1.7;
@@ -26,60 +24,81 @@ body {
 /* 3. Layout Helpers */
 .container {
   width: 90%;
-  max-width: 960px;
+  max-width: 960px;      /* pick 960px or 760px, not both */
   margin: 0 auto;
   padding: 1.25rem 1rem;
 }
-
-section       { margin-bottom: 2.25rem; }
-h1, h2, h3    { margin: 0 0 0.75rem; line-height: 1.3; }
-p             { margin: 0 0 1.25rem; }
-ul            { margin: 0 0 1.25rem 1.25rem; padding: 0; }
-li            { margin-bottom: 0.6rem; }
+section {
+  margin-bottom: 2.25rem;
+}
+h1, h2, h3 {
+  margin: 0 0 .75rem;
+  line-height: 1.3;
+}
+p {
+  margin: 0 0 1.25rem;
+}
+ul {
+  margin: 0 0 1.25rem 1.25rem;
+  padding: 0;
+}
+li {
+  margin-bottom: .9rem;
+}
+/* divider between sections */
+main section:not(:first-of-type)::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background: #e6e6e6;
+  margin: 2.25rem 0;
+}
 
 /* 4. Header */
 header {
   position: relative;
-  height: 280px;
-  background: url('../assets/images/lake-banner.jpg') center/cover no-repeat;
+  height: 200px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  color: #fff;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(15, 177, 221, 0.2),
+      rgba(242, 247, 247, 0)
+    ),
+    url('../assets/images/dock-banner.jpg') center/cover no-repeat;
 }
-
-header::before {                 /* dark overlay */
+header::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.55);
 }
-
 header .container {
-  position: relative;            /* sit above overlay */
+  position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 header h1 {
   color: #fff;
   font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: .5rem;
 }
-
 nav ul {
   list-style: none;
   display: flex;
   gap: 1.5rem;
 }
-
 nav a {
   color: #fff;
   text-decoration: none;
   font-weight: 700;
-  padding: 0.25rem 0.5rem;
+  padding: .25rem .5rem;
 }
-
 nav a:hover,
 nav a.active {
   background-color: rgba(255, 255, 255, 0.2);
@@ -94,20 +113,16 @@ nav a.active {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-/* Specific card sections reuse .card */
-#welcome     { }
-#lake-overview,
-#history,
-#association,
-#quick-links { }
-
 /* Hero lead paragraph */
-#welcome .lead { font-size: 1.15rem; }
+#welcome .lead {
+  font-size: 1.15rem;
+}
+/* Lake overview list */
+#lake-overview ul {
+  list-style: disc;
+}
 
-/* Lake overview list spacing */
-#lake-overview ul { list-style: disc; }
-
-/* 6. FAQ (definition list version) */
+/* 6. FAQ */
 .faq-list dt {
   font-weight: 700;
   margin-top: 1.25rem;
@@ -124,38 +139,100 @@ footer {
   text-align: center;
   padding: 1rem 0;
 }
-
-footer p { margin: 0; font-size: 0.95rem; }
-
-/* tighter column & readable bullets */
-.container        { max-width: 760px; }
-ul li             { margin-bottom: .9rem; }
-
-/* add gentle divider between sections */
-main section:not(:first-of-type)::before {
-  content: '';
-  display: block;
-  height: 1px;
-  background: #e6e6e6;
-  margin: 2.25rem 0;
+footer p {
+  margin: 0;
+  font-size: .95rem;
 }
 
-/* hero & headings */
-#welcome          { margin-top: 1.5rem; }
-#welcome h2       { font-size: 2rem; }
+/* Welcome section tweaks */
+#welcome {
+  margin-top: 1.5rem;
+}
+#welcome h2 {
+  font-size: 2rem;
+}
 
-/* optional unify footer / overlay tones */
-header::before    { background: rgba(0,0,0,.55); }
-/* or footer { background-color: #34495e; } */
-
+/* 8. Buttons */
 .btn {
-  display:inline-block;
-  padding:0.6rem 1.2rem;
-  background:rgb(68, 77, 163);     /* lake-green */
-  color:#fff;
-  border-radius:0.3rem;
-  font-weight:600;
-  text-decoration:none;
+  display: inline-block;      /* valid: inline-block */
+  padding: .6rem 1.2rem;
+  background: rgb(68, 77, 163);
+  color: #fff;
+  border-radius: .3rem;
+  font-weight: 600;
+  text-decoration: none;
 }
 .btn:hover,
-.btn:focus { background:#097b34; }
+.btn:focus {
+  background: #097b34;
+}
+
+/* Centered contact buttons */
+.contact__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+/* 9. Hero Grid Layout */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "heading heading"
+    "text image";
+  gap: 2rem;
+  align-items: start;
+}
+.hero-grid h2 {
+  grid-area: heading;
+  margin: 0;
+}
+.hero-text {
+  grid-area: text;
+}
+
+.hero-image {
+  grid-area: image;
+  max-width: 60%;           /* shrink to 60% of its parent */
+  margin: 1rem auto;        /* auto‑center */
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;              /* fill the figure’s width */
+  height: auto;
+  object-fit: cover;
+  
+}
+
+/* always show & italicize caption */
+.hero-image figcaption {
+  display: block;           /* override visually-hidden if still applied */
+  font-style: italic;       /* make it italic */
+  font-size: .9rem;
+  color: #555;
+  text-align: center;
+  margin-top: .5rem;
+}
+
+/* 11. Mobile Responsiveness */
+@media (max-width: 700px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "heading"
+      "image"
+      "text";
+    gap: 1rem;
+  }
+  .hero-image {
+    margin: .5rem 0;
+  }
+}
