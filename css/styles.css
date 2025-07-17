@@ -204,12 +204,26 @@ footer p {
 }
 
 .hero-image-single {
-  grid-area: image;
-  max-width: 80%;        /* or whatever size you prefer */
-  margin: 1rem 0;         /* only top/bottom spacing */
-  justify-self: center;      /* push to the right edge */
-  overflow: hidden;
-  box-shadow: none;
+  display: block;
+  width: 100%;              /* full width of container */
+  margin: 1rem 0;           /* vertical spacing */
+  text-align: center;       /* center figcaption text */
+}
+
+.hero-image-single img {
+  display: block;
+  width: 100%;              /* make image responsive */
+  height: auto;             /* maintain aspect ratio */
+  border-radius: 8px;       /* optional: soften corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* subtle depth */
+}
+
+.hero-image-single figcaption {
+  margin-top: .5rem;
+  font-style: italic;
+  font-size: .9rem;
+  color: #555;
+  text-align: center;
 }
 
 .hero-image {
