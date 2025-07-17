@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
   <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Lightbox2 CSS -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Lightbox2 JS -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js">
+  </script>
+
 </head>
 <body>
   <header>
@@ -38,10 +50,13 @@
     </p>
     </div>
 
-    <figure class="hero-image">
-      <img src="assets/images/sunset-thom.jpg" alt="Fortescue at sunrise.">
-      <figcaption>Fortescue at sunrise (credit: Eric Thom)</figcaption>
-    </figure>
+<figure class="hero-image">
+  <a href="assets/images/sunset-thom.jpg" data-lightbox="lake" data-title="Fortescue at sunrise (credit: Eric Thom)">
+    <img src="assets/images/sunset-thom.jpg" alt="Fortescue at sunrise.">
+  </a>
+  <figcaption>Fortescue at sunrise (credit: Eric Thom)</figcaption>
+</figure>
+
   </section>
   </main>
 

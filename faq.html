@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ</title>
   <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Lightbox2 CSS -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Lightbox2 JS -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js">
+  </script>
+  
 </head>
 <body>
   <header>
@@ -78,14 +90,17 @@
   </div>
 
   <figure class="hero-image">
-    <img src="assets/images/fortescue-milky-way.jpg"
-         alt="Milky Way rising over Lake Fortescue.">
+    <a href="assets/images/fortescue-milky-way.jpg" data-lightbox="lake" data-title="Milky Way rising over Lake Fortescue (credit: Ben Eagan)">
+      <img src="assets/images/fortescue-milky-way.jpg" alt="Milky Way rising over Lake Fortescue.">
+    </a>
     <figcaption>Milky Way rising over Lake Fortescue (credit: Ben Eagan)</figcaption>
     <br><br>
-    <img src="assets/images/sunset-thom-2.jpg"
-         alt="Sunset over the lake (credit: Eric Thom).">
+    <a href="assets/images/sunset-thom-2.jpg" data-lightbox="lake" data-title="Sunset over the lake (credit: Eric Thom)">
+      <img src="assets/images/sunset-thom-2.jpg" alt="Sunset over the lake (credit: Eric Thom).">
+    </a>
     <figcaption>Sunset over the lake (credit: Eric Thom)</figcaption>
   </figure>
+
 </section>
 
   </main>
