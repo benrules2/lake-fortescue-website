@@ -289,3 +289,23 @@ footer p {
   }
 }
 
+
+/* For small inline images like posters */
+.inline-image {
+  float: right;             /* push image to the right */
+  max-width: 300px;         /* keep poster small */
+  margin: 0 0 1rem 1rem;    /* spacing from text */
+  border-radius: 4px;       /* optional */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.inline-image img {
+  width: 100%;
+  height: auto;
+}
+.inline-image figcaption {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+}
+
