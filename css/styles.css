@@ -302,6 +302,24 @@ footer p {
   }
 }
 
+@media (max-width: 700px) {
+  /* Collapse side-by-side layout */
+  .side-by-side {
+    flex-direction: column; /* stack image and text vertically */
+    align-items: center;    /* center items horizontally */
+    text-align: center;     /* center text for consistency */
+  }
+
+  .side-by-side .inline-image {
+    margin: 1rem 0;        /* add spacing above and below image */
+    max-width: 80%;        /* scale image for small screens */
+  }
+
+  .side-by-side .text {
+    width: 100%;           /* make text take full width */
+  }
+}
+
 
 /* For small inline images like posters */
 .inline-image {
