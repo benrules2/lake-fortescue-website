@@ -295,6 +295,10 @@ footer p {
 
 /* 11. Mobile Responsiveness */
 @media (max-width: 700px) {
+
+  nav.slim-bar {
+    gap: 1em;
+}
   /* Remove grid on small screens for natural flow */
   .hero-grid {
     display: block;           /* ditch grid entirely */
