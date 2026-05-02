@@ -3,7 +3,7 @@
 ------------------------------------------------------------------ */
 
 /* 1. Web Font */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
 
 /* 2. CSS Reset & Base */
 *, *::before, *::after {
@@ -63,19 +63,12 @@ main section:not(:first-of-type)::before {
 /* 4. Header */
 header {
   position: relative;
-  height: 300px;
+  height: 340px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  text-shadow: #333;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(16, 185, 232, 0.1),
-      rgba(30, 41, 41, 0)
-    ),
-    url('../assets/images/loons-1-thom-crop-top.jpg') center/cover no-repeat;
+  background: url('../assets/images/loons-1-thom-crop-top.jpg') center 45%/cover no-repeat;
 }
 
 nav.slim-bar {
@@ -107,7 +100,7 @@ header::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.01);
+  background: rgba(0, 0, 0, 0);
 }
 
 header .container {
@@ -116,6 +109,14 @@ header .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+header h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 3.2rem;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
 }
 
 h1 {
@@ -298,7 +299,17 @@ footer p {
 
   nav.slim-bar {
     gap: 1em;
-}
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
   /* Remove grid on small screens for natural flow */
   .hero-grid {
     display: block;           /* ditch grid entirely */
